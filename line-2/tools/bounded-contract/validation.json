@@ -1,0 +1,60 @@
+{
+  "wall": {
+    "paths": [
+      "artifacts/line-2/wall.png",
+      "artifacts/line-2/wall-v4.png"
+    ],
+    "format": "PNG",
+    "width": 1254,
+    "height": 1254,
+    "color": "RGB",
+    "bytes": 3947715,
+    "sha256": "877a58310c87ae1ee366efcd9a28008ed2eb2c9caa1d19347c96cae990c8eff6",
+    "chunk_crc_and_decompression_check": "passed"
+  },
+  "preview": {
+    "path": "dist/line-2/24.jpg",
+    "format": "JPEG",
+    "width": 512,
+    "height": 512,
+    "bytes": 70896,
+    "decode_check": "passed"
+  },
+  "preservation": {
+    "ancestor_record": 23,
+    "ancestor_sha256_verified_before_edit": true,
+    "addition_rectangle_xyxy": [
+      565,
+      805,
+      875,
+      965
+    ],
+    "method": "ffmpeg overlay of selected generated dark charcoal/ochre pixels onto ancestor RGB; unchanged ancestor outside rectangle by construction",
+    "ancestor_marks_inside_rectangle": false,
+    "independent_pixel_comparison": "not retained; no pixel count claimed"
+  },
+  "tool_checks": {
+    "new_boundary_tests_passed": 14,
+    "inherited_engine_tests_passed": 10,
+    "inherited_ordered_tests_passed": 13,
+    "real_inherited_records_passed": [
+      "01",
+      "22",
+      "23"
+    ],
+    "new_record_strict_contract": "passed"
+  },
+  "visual_review": {
+    "method": "local inspection of final full PNG and decoded 512px JPEG",
+    "pepe": "three preserved wide-mouth heavy-lidded ancestor figures",
+    "new_mark": "flat worn charcoal/ochre sieve and stones",
+    "hands_and_handprints": "none distinctly depicted; no new hands or stencils",
+    "prohibited_marks_observed": false,
+    "unmet_requirements": []
+  },
+  "limitations": [
+    "local visual and byte checks are not independent certification",
+    "POSIX reader requires a trusted workspace; no hard-link/mount isolation or immutable file snapshot",
+    "trusted regex contracts and quadratic uniqueness retain engine resource limits"
+  ]
+}

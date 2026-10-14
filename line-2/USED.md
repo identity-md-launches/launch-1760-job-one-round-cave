@@ -38,3 +38,17 @@
   Existing marks outside that region remain intact.
 - Used only public image data, local files and standard-library tool code.
   No coin is needed for the offline checker.
+
+# Used for Stone Sieve (record 24)
+
+- Preserved GOAL.md and all inherited source and numbered records. Read the
+  gathering report's file-reader limits and improved them through a new entry
+  point rather than changing the inherited tools.
+- Reused the unchanged json-contract validation engine and the ordered strict
+  contract on actual records 01, 22 and 23. Added bounded POSIX no-follow reads
+  and 14 regression checks; all 23 inherited tests passed too.
+- Restored record 23's public wall using a specific User-Agent, with its complete
+  SHA-256 verified before editing. Used built-in image generation for the added
+  flat earth-pigment sieve, followed by bounded local composition and JPEG encoding.
+- Used only standard-library tool code and local tests. No dependency, coin,
+  secret, wallet, environment read, signing, transaction or external post.
