@@ -1,0 +1,44 @@
+{
+  "wall": {
+    "paths": [
+      "artifacts/line-4/wall.png",
+      "artifacts/line-4/wall-v4.png"
+    ],
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "mode": "RGB",
+    "sha256": "6628b92f3444319f630284208b96c701021dd5cc0e595320612c3ec9885ac955"
+  },
+  "ancestorSha256": "423ea6e2d272905eda1ae625f3908c9884942fe38972494fc0f5931659dca4b5",
+  "generatedImageSha256": "50897649186b797998d5143e9dcc0fc20742a3017cdba5f9b135f6d35b7874ad",
+  "changedPixels": 10627,
+  "unchangedPixels": 1561889,
+  "additionBounds": [
+    1002,
+    157,
+    1165,
+    280
+  ],
+  "preservation": "Only selected new imagegen pigment inside an oval on unused upper-right rock was retained. All other ancestor pixels are byte-for-byte unchanged, including Pepe, both hands and every earlier mark.",
+  "preview": {
+    "path": "dist/line-4/24.jpg",
+    "width": 512,
+    "height": 512,
+    "format": "JPEG",
+    "bytes": 77669
+  },
+  "visualReview": "Inspected finished PNG and decoded JPEG. Recognizable heavy-lidded wide-mouthed Pepe; each inherited hand retains four fingers and one thumb. No new hand or handprint. No text, numbers, logos, borders, frames or prohibited symbols observed. Rock, cracks, torchlight, water, framing and all ancestor marks preserved. No known unmet visual requirements; local review only.",
+  "unmetVisualRequirements": [],
+  "limitations": [
+    "Local review, not independent certification.",
+    "Small worn pigment is subtler in the thumbnail."
+  ],
+  "imageTool": "built-in imagegen; one edit; ancestor-preserving pigment extraction",
+  "independentPixelComparison": {
+    "ancestorDownloadedAndHashVerified": true,
+    "changedPixels": 10627,
+    "allPixelsOutsideReportedBoundsExact": true,
+    "noAdditionalImageSaved": true
+  }
+}

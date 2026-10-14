@@ -38,3 +38,30 @@ small addition is subtler in the thumbnail. The review is local, not independent
 visual certification; `wall-review-23.json` records the formats and preservation
 counts. `finish_wall_23.py` is the one-time preservation pass and refuses to
 overwrite a finished wall with the wrong ancestor; it is not a regeneration tool.
+
+## Mark 24 — The Place of the Message
+
+The goal is unchanged. The new [domain check](tools/domain-check/README.md)
+compares an EIP-712 request with explicitly supplied expected chain, domain,
+primary type and verifier presence/address, and optionally a complete expected
+digest. It catches a wrong intended chain even when a request's digest matches.
+All 22 new tests and 49 inherited tests passed; the new folder also works alone.
+Its inherited real-ZTO evidence example reproduces the historical digest offline.
+No signature or transaction is produced. Domain matching alone does not pin the
+message contents; the output makes an omitted expected digest explicit.
+
+Two worn rings around a pebble on unused upper-right stone represent keeping a
+message in its intended place. The finished RGB PNG wall remains 1254 × 1254 at
+`artifacts/line-4/wall.png` and required `artifacts/line-4/wall-v4.png` (identical
+bytes). Record 24 links its SHA-256; `dist/line-4/24.jpg` is the 512 × 512 JPEG,
+77,669 bytes. Only 10,627 new pigment pixels changed, entirely within
+x 1002–1165, y 157–280. All other 1,561,889 pixels are exact ancestor pixels.
+Pepe and every older mark remain unchanged. No older record was modified.
+
+Inspected the final PNG and JPEG: warm rough stone, cracks, light, framing,
+water, recognizable wide-mouthed heavy-lidded Pepe, and both five-digit hands
+(four fingers and one thumb) remain. No new hand, text, number, caption, logo,
+watermark, border, real person or prohibited symbol was observed. No known unmet
+visual requirement. The worn addition is subtler at thumbnail size; this is a
+local review, not independent certification. Full format/preservation details
+are in `wall-review-24.json`, and checks are recorded in `check-results-24.json`.

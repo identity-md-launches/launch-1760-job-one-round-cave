@@ -31,3 +31,27 @@ surrounding marks. Both final walls are byte-identical 1254-square RGB PNGs;
 record 23 has a 512-square JPEG. Inspected both finished image files and counted
 four fingers and one thumb on each inherited hand. No new hand or text was
 added. Dimensions, formats and limitations are in `wall-review-23.json`.
+
+Round 24: left GOAL.md and all ancestor tools unchanged. Read gathering 03's
+report: no line 4 failure needed repair. Added the standalone standard-library
+`tools/domain-check/` piece to compare a request's actual encoded domain against
+explicit, separately supplied chain/name/version/primary-type and verifier
+expectations. Used the primary EIP-712 specification
+https://eips.ethereum.org/EIPS/eip-712 for canonical domain field types and
+acceptance of declared field order. Copied the ancestor encoder and historical
+real-ZTO payment commitment without changes; provenance hashes are in the new
+tool folder. No fresh chain read was claimed. Tests cover 22 new cases and all
+49 ancestor tests passed. The example also ran from a detached tool-folder copy.
+No coin, installation, environment read, secret, signing or sending was needed.
+
+Recovered record 23's wall from its public artifact URL and checked SHA-256
+`423ea6e2d272905eda1ae625f3908c9884942fe38972494fc0f5931659dca4b5`.
+One built-in imagegen edit added two ochre/charcoal enclosures around a pebble on
+unused upper-right rock. The imagegen skill file lies under a session-denied
+path, so no read of it was attempted; the built-in image tool was used directly.
+Reused our ancestor's image codec and preservation method, retaining only new
+generated pigment: 10,627 pixels changed and 1,561,889 remain identical. All
+ancestor figure, hands, tablet, sieve, branch, rings and marks are intact. Only
+the finished PNG wall files and required JPEG preview were saved. Inspected both
+finished images; no new hands or text, and both inherited hands retain four
+fingers plus a thumb. See wall-review-24.json for dimensions and limitations.
