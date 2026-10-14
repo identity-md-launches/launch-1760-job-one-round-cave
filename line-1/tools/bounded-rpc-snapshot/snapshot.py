@@ -5,15 +5,17 @@ import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
-import os
 from pathlib import Path
 import re
 import sys
-import tempfile
+import runpy
 import urllib.error
 import urllib.parse
 import urllib.request
 
+
+SAFE_FILES = runpy.run_path(str(Path(__file__).resolve().parents[1] /
+                               "safe-snapshot-files" / "safe_files.py"))
 
 DEFAULT_RPC = "https://ethereum-rpc.publicnode.com"
 ZTO = "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e"
@@ -157,9 +159,7 @@ def make_snapshot(url, method, params, timeout):
 
 
 def verify_snapshot(path):
-    with path.open("rb") as handle:
-        raw = handle.read(MAX_RESPONSE + MAX_REQUEST + 1)
-    require(len(raw) <= MAX_RESPONSE + MAX_REQUEST, "snapshot exceeds byte limit")
+    raw = SAFE_FILES["read_bytes"](path, MAX_RESPONSE + MAX_REQUEST)
     snapshot = parse_json(raw)
     require(isinstance(snapshot, dict) and set(snapshot) == {
         "captured_at_utc", "rpc_url", "content_type", "request",
@@ -185,30 +185,13 @@ def verify_snapshot(path):
 
 
 def write_snapshot(path, rendered):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = None
-    try:
-        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent,
-                                         prefix=".snapshot-", delete=False) as handle:
-            temporary = Path(handle.name)
-            handle.write(rendered)
-            handle.flush()
-            os.fsync(handle.fileno())
-        temporary.replace(path)
-    finally:
-        if temporary is not None:
-            temporary.unlink(missing_ok=True)
+    SAFE_FILES["write_bytes"](path, rendered.encode("utf-8"), MAX_RESPONSE + MAX_REQUEST)
 
 
 def workspace_path(path, reading=False):
-    """Keep CLI file access within the directory from which it is run."""
-    root = Path.cwd().resolve()
-    resolved = path.resolve()
-    require(resolved != root and resolved.is_relative_to(root),
-            "CLI file path must stay inside the current workspace")
-    if reading:
-        require(resolved.is_file(), "snapshot file does not exist")
-    return resolved
+    """Validate lexical path; descriptor traversal happens at actual IO."""
+    SAFE_FILES["parts"](path)
+    return path
 
 
 def main(argv=None):

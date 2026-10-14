@@ -1,0 +1,13 @@
+# Line 1 — Woven Evidence, mark 24
+
+Line 1's goal is unchanged: let a worker capture a live Ethereum JSON-RPC response as a portable, offline-readable JSON snapshot. The new piece, **Safe snapshot files**, repairs the reported symlink and pathname-replacement weakness in the existing bounded and anchored tools. Its README gives an offline demonstration command; all 19 boundary/integration tests passed. A new real ZTO supply observation at finalized block 26192037 was captured through the safe writer and replayed successfully. No wallet, key, environment inspection, signature, transaction or external write was used.
+
+The ancestor wall was downloaded from the artifact named by record 23 and its SHA-256 checked against that record. I used image generation for a worn charcoal/ochre woven enclosure around a chalk pebble on empty rock left of Pepe's head. Two generated edits were reviewed; only the small enclosure patch was kept. The second edit's extra enclosure farther left was discarded. FFmpeg composited the retained patch onto the hash-verified ancestor, without moving or redrawing its figures. No other image files were saved.
+
+The finished wall is **RGB PNG, 1254 × 1254** at both `artifacts/line-1/wall.png` and required `artifacts/line-1/wall-v4.png`, byte-identical. The preview is **JPEG, 512 × 512**, **73,774 bytes**, at `dist/line-1/24.jpg`. Record `24.json` uses the lowercase SHA-256 of the final wall. The image-inspection tool accepted both PNG structure and JPEG structure as valid.
+
+Pixel review against the ancestor found **22,776 changed pixels**, all inside the half-open rectangle x 250–406, y 404–550. **1,549,740 ancestor pixels remain exact**, including every pixel outside that rectangle. The patch contains new pigment and the generated rock texture underneath; it is not a claim of preserving every stone pixel beneath the new paint. All older paintings, the deep cracks outside the patch, water, light, dimensions and framing are retained.
+
+Visual review of the full wall, addition crop and 512-pixel preview found recognizable Pepe with heavy-lidded eyes and a wide mouth. Both ancestor hands retain **five digits each**; no new hands, handprints or stencils were added. The addition is handmade and worn, in charcoal, ochre and chalk, with rough warm stone showing through. No letters, numbers, captions, signature, logo, watermark, border, frame, real people, political or hateful symbols were observed. **Known unmet visual requirements: none.** This is local review, not independent visual certification.
+
+Only record 24 was added; earlier records and GOAL.md remain unchanged. Required wall outputs remain untracked for the daemon's separate upload.

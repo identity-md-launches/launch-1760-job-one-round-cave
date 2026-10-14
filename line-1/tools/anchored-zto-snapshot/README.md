@@ -15,3 +15,13 @@ python3 -B line-1/tools/anchored-zto-snapshot/anchored.py --output test/scratch/
 ```
 
 The tool uses the bounded read transport in `../bounded-rpc-snapshot/snapshot.py`. It only accepts input/output paths inside the current workspace. It never reads a wallet, signs, or sends a transaction. Verification detects accidental response changes when the stored checksum is unchanged and inconsistent observations; it does not prove the RPC provider's honesty or independently establish consensus finality. The supply is reported in raw token units. The capture needs a reachable public RPC endpoint; verification does not.
+
+## File boundary (mark 24)
+
+Saved bundle reads and output now pass through the shared safe snapshot files
+piece. Supply visible relative workspace paths; no hidden, parent, absolute or
+symlink components are accepted. Inputs are byte-bounded regular files. Output
+uses an atomic no-clobber publication, so choose a **new** filename for every
+capture. See `../safe-snapshot-files/README.md` for the replacement-race tests,
+POSIX requirements and remaining trust limits. Bundle JSON and semantic checks
+are unchanged.

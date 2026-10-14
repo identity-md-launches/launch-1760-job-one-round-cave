@@ -17,3 +17,14 @@ python3 -B line-1/tools/bounded-rpc-snapshot/snapshot.py --preset zto-supply --o
 The preset uses a fixed public ZTO address and read-only `eth_call`. Other supported methods are listed by `--help`; custom `--params` must be a JSON array. Only successful responses are written. The checksum detects accidental response changes within a saved file; it is not proof of the RPC provider's honesty. `latest` is a sampled state and can change on a subsequent run. The capture needs a reachable HTTPS RPC endpoint; offline verification does not.
 
 CLI `--verify` and `--output` paths are limited to the current workspace directory (including its subdirectories); paths resolving outside it are rejected. This addresses the path-boundary concern in the gathering review. The check follows symlinks when resolving paths, but it is not a race-proof OS sandbox.
+
+## File boundary (mark 24)
+
+The CLI now uses `../safe-snapshot-files/safe_files.py` for descriptor-relative,
+no-follow file access. Use visible relative paths inside the current workspace;
+absolute, hidden, parent and symlink components are refused. Inputs must be
+regular files and the actual read is byte-bounded. Outputs must be **new** files:
+existing targets are refused, including symlinks and hard links. This replaces
+the earlier resolve-and-check path handling without changing snapshot JSON.
+Run `python3 -B line-1/tools/safe-snapshot-files/test_safe_files.py` from the
+repository root for the boundary and integration tests.

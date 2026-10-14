@@ -139,19 +139,13 @@ def capture(timeout):
 
 
 def workspace_path(raw, writing=False):
-    root = Path.cwd().resolve()
-    path = Path(raw)
-    resolved = path.resolve()
-    require(resolved != root and resolved.is_relative_to(root),
-            "path must stay inside the current workspace")
-    if not writing:
-        require(resolved.is_file(), "snapshot file does not exist")
-    return resolved
+    BOUNDED["SAFE_FILES"]["parts"](raw)
+    return raw
 
 
 def verify(path):
-    require(path.stat().st_size <= MAX_FILE, "bundle exceeds byte limit")
-    bundle = BOUNDED["parse_json"](path.read_bytes())
+    raw = BOUNDED["SAFE_FILES"]["read_bytes"](path, MAX_FILE)
+    bundle = BOUNDED["parse_json"](raw)
     return validate_bundle(bundle)
 
 
