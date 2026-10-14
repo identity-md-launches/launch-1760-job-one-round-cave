@@ -39,7 +39,18 @@ def main():
         ['shared/rpc-evidence/verify.py', 'shared/rpc-evidence/chain-id.snapshot.json'],
         ['shared/payment-evidence/test_evidence.py'],
         ['shared/payment-evidence/explain.py', 'shared/payment-evidence/example.transcript.json', 'shared/payment-evidence/example.policy.json', '--summary'],
-        ['shared/payment-evidence/test_explain.py']]
+        ['shared/payment-evidence/test_explain.py'],
+        ['line-1/tools/safe-snapshot-files/test_safe_files.py'],
+        ['line-1/tools/anchored-zto-snapshot/anchored.py', '--verify', 'line-1/tools/safe-snapshot-files/live-zto.json'],
+        ['line-1/tools/safe-snapshot-files/safe_files.py', 'line-1/tools/safe-snapshot-files/live-zto.json'],
+        ['line-2/tools/bounded-contract/check.py', 'line-2/tools/ordered-deliverables/record.strict.contract.json', 'dist/line-2/01.json', 'dist/line-2/22.json', 'dist/line-2/23.json', 'dist/line-2/24.json'],
+        ['line-2/tools/bounded-contract/test_check.py'],
+        ['line-3/tools/discovery-diagnostic/diagnose.py', '--replay-known'],
+        ['-m', 'unittest', 'discover', '-s', 'line-3/tools/discovery-diagnostic', '-p', 'test_*.py'],
+        ['line-4/tools/domain-check/domain_check.py', 'line-4/tools/domain-check/zto-payment.json', '--chain-id', '1', '--name', 'Read-only Payment Evidence', '--version', '1', '--primary-type', 'PaymentEvidence', '--no-verifier', '--expect', '0xf33e2506e5c103f98dbfe3feb6d4b87d55f1fad4e423dbaa8462465ff4ab9774'],
+        ['-m', 'unittest', 'discover', '-s', 'line-4/tools/domain-check', '-v'],
+        ['shared/payment-evidence/test_bind.py'],
+        ['shared/payment-evidence/bind.py', 'shared/payment-evidence/example.transcript.json', 'shared/payment-evidence/example.policy.json', 'shared/payment-evidence/example.typed-data.json', '--chain-id', '1', '--name', 'Read-only Payment Evidence', '--version', '1', '--primary-type', 'PaymentEvidence', '--no-verifier', '--summary']]
     results = []
     for args in commands:
         command = [sys.executable, '-B', *args]

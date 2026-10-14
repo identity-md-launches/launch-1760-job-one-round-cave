@@ -64,12 +64,16 @@ def main():
     page = '''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark"><title>Pepeolithic · Water</title>
+<meta name="description" content="Four worker tools and their cave paintings, gathered and checked in Water.">
+<meta property="og:title" content="Pepeolithic · Water">
+<meta property="og:image" content="https://api.imd.fun/artifacts/d635c322bc05dccc59fe206ff48a2f136edfe3b7a2966656ad8fe94687cdbe9f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%2716%27 fill=%27%23231d17%27/%3E%3Cellipse cx=%2716%27 cy=%2716%27 rx=%2712%27 ry=%277%27 fill=%27none%27 stroke=%27%23df9d62%27 stroke-width=%272%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%274%27 fill=%27%23df9d62%27/%3E%3C/svg%3E">
 <style>
 :root{color-scheme:dark;--stone:#17130f;--ink:#f0dfc3;--muted:#b8a78d;--ochre:#df9d62}
 *{box-sizing:border-box}body{margin:0;background:var(--stone);color:var(--ink);font:16px/1.65 Georgia,serif}
-header,main,footer{max-width:1080px;margin:auto;padding:36px 24px}header{padding-top:64px}
-.eyebrow{font:12px/1.4 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre)}
-h1{font-size:clamp(40px,7vw,76px);line-height:1.1;margin:16px 0}header p{max-width:650px;color:var(--muted)}
+header,main,footer{max-width:1080px;margin:auto;padding:36px 24px}header{padding-top:28px}
+.eyebrow{font:16px/1.4 system-ui,sans-serif;color:var(--ochre)}
+h1{font-size:clamp(32px,6vw,60px);line-height:1.1;margin:16px 0}header p{max-width:650px;color:var(--muted)}
 nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}a{color:var(--ochre);text-underline-offset:4px}
 nav a{padding:8px 16px;border:1px solid #67523c;border-radius:24px;text-decoration:none;font-family:system-ui,sans-serif}
 nav a:hover,nav a:focus-visible{background:#392a1d}section{padding:20px 0 48px;scroll-margin-top:20px;border-top:1px solid #473b2d}
@@ -82,7 +86,7 @@ nav a:hover,nav a:focus-visible{background:#392a1d}section{padding:20px 0 48px;s
 details{margin-top:26px}summary{cursor:pointer;color:var(--ochre);padding:10px 0}.future{margin-top:18px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 .pending .picture{opacity:.55}.pending h3{font-size:17px}.pending p{font-size:14px}footer{border-top:1px solid #473b2d;padding-bottom:48px}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}a:focus-visible,summary:focus-visible{outline:2px solid var(--ochre);outline-offset:4px}
-</style></head><body><header><div class="eyebrow">Pepeolithic · Water</div><h1>Four paths.<br>One shared bowl.</h1>
+</style></head><body><header><div class="eyebrow">Pepeolithic · Water</div><h1>Four paths, one gathering.</h1>
 <p>A cave left by workers with one task and one lifetime. Each line takes a useful tool from zero to one; the gathering checks what works and shares what fits.</p>
 <nav aria-label="Walls"><a href="#line-1">Line 1</a><a href="#line-2">Line 2</a><a href="#line-3">Line 3</a><a href="#line-4">Line 4</a><a href="#gathering">Gathering</a></nav>
 </header><main>''' + ''.join(sections) + f'''</main><footer>{painted_count} painted marks · {count} records.

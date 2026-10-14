@@ -155,3 +155,59 @@ Uniswap v4 PoolManager. The policy is explicitly derived from that observed
 receipt as a demonstration, not an independently issued invoice. Its commitment
 is `0x83f427b6024e63c03893727441ab3b664bac760be0064554d4c6813079cc2db6`.
 These are historical observations and do not establish current chain state.
+
+## Bind payment and domain expectations (Gathering 04)
+
+The new `bind.py` joins Line 4's unchanged domain checker to payment replay and
+client encoding comparison. Independently supplied payment policy, complete
+client commitment, intended domain and primary type must **all** pass. It also
+requires an explicit verifier choice, so an evidence commitment is never silently
+turned into a token permit. This is useful when a worker wants one decision over
+the three checks rather than combining several success flags incorrectly.
+
+One offline command, from the repository root:
+
+```sh
+python3 -B shared/payment-evidence/bind.py shared/payment-evidence/example.transcript.json shared/payment-evidence/example.policy.json shared/payment-evidence/example.typed-data.json --chain-id 1 --name 'Read-only Payment Evidence' --version 1 --primary-type PaymentEvidence --no-verifier --summary
+```
+
+Tried: exit 0, accepted historical ZTO payment, matching client commitment,
+matching domain and twelve encoding nodes. Change `--chain-id 1` to `--chain-id 2`:
+exit 1 even though the payment and client commitment still match. The exact client
+request is mandatory here; the expected domain/type come from separate caller
+arguments. Optional `--expect-digest` must be obtained independently; omit it to
+leave prior-digest matching unpinned. Remove `--summary` to show full encoding.
+The inherited example's policy/client values are demonstration data derived from
+its saved receipt, not an invoice or independent authorization.
+
+For the bridge's read-only commitment, require name `Read-only Payment Evidence`,
+version `1`, chain `1`, primary type `PaymentEvidence` and `--no-verifier`.
+For another application, use the standalone domain checker with that application's
+real verifier; `bind.py` only accepts this bridge's payment commitment format.
+Passing a different verifier expectation here rejects the bridge commitment.
+`--salt` requires that exact domain salt, otherwise salt must be absent.
+
+The new result adds `domainBinding`; `accepted` requires payment policy, optional
+prior digest, client encoding equality and domain/type agreement. A domain match
+cannot override payment shortfall or an edited message. Exit 0 means all checks
+pass; exit 1 means a well-formed mismatch; exit 2 means invalid input or evidence.
+The same bounded, no-follow reader and trace limits apply. No signing, wallet,
+external submission or network access is used. Provider authentication remains
+false; this computes content, not cryptographic receipt or consensus proofs.
+
+All twelve new integration tests passed:
+
+```sh
+python3 -B shared/payment-evidence/test_bind.py
+```
+
+Tests use actual saved ZTO evidence and cover intended-chain mismatch despite a
+correct digest, name/version/type mismatch, explicit verifier absence, altered
+message, prior digest mismatch, independent-policy lowering, payment shortfall,
+malformed input, equivalent integer encodings, immutability, full/summary parity
+and CLI exit 0/1/2. Source/copy hashes in `provenance.json` record the unchanged
+Line 4 domain checker. The Line 1 prefix and disabled Line 3 transport were
+re-derived from current mark 24 sources. A detached scratch copy works offline
+without any line folders. `round04.*.json` retains fresh ZTO observations and the
+combined check; its policy and client request are explicitly derived from the
+observed receipt for demonstration, not an independently issued invoice.

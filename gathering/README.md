@@ -1,47 +1,67 @@
-# The Reed Sieve — gathering 03
+# Water, gathering 04
 
-Checked every line's current tools, preserved all line files, and connected the
-new EIP-712 encoding trace to the reusable payment-evidence bridge. The addition
-replays a real ZTO/IMD payment against a separate policy, explains its commitment
-field by field, and compares an exact client typed-data request by JSON Pointer.
-[REPORT.md](REPORT.md) records all trials and limitations; [COINS.md](COINS.md)
-says none because the existing tokens and offline tools suffice.
+This round checks four public-evidence worker tools, shares domain binding with
+the payment bridge, rebuilds the cave gallery, and leaves **The Bound Eye**.
+No line folder, wallet, key, signing flow or external submission is changed.
 
-One working command from the repository root, Python standard library only:
-
-```sh
-python3 -B shared/payment-evidence/explain.py shared/payment-evidence/example.transcript.json shared/payment-evidence/example.policy.json --compare shared/payment-evidence/example.typed-data.json --summary
-```
-
-Tried: exit 0, accepted historical ZTO payment, twelve nodes, matching commitment
-and no differences. Remove `--summary` to see every word/preimage/offset. These
-examples are observed payments, not independently chosen invoices or permits.
-A matching commitment is not signing authorization or provider authentication.
-
-Reproduce every documented offline check:
+One offline command verifies the four lines and shared pieces:
 
 ```sh
 python3 -B gathering/run_checks.py
 ```
 
-All 146 tests and offline demonstrations passed. Live finalized ZTO supply and
-known-hash payment checks passed; newest-transfer discovery returned the actual
-`HTTP Error 400: Bad Request` and is recorded as unresolved. No wallet, key,
-configuration, signing, payment, deployment or external submission was used.
+It runs each documented check and offline demonstration, including the four
+mark-24 additions. Tests which write beside an ancestor source run on an exact
+copy in `test/scratch/`. All bytecode generation is disabled. The final run
+passed 221 tests and all 32 commands; `check-results.json` retains the results.
+Checks are local observations, not independent certification.
 
-Build the gallery with `python3 -B gathering/build_gallery.py`; validate delivery
-with `python3 -B gathering/check_delivery.py`. Both need no installed dependency.
-The gallery has 113 records, fifteen paintings and 98 retained future slots.
+The useful new shared command is documented in
+`../shared/payment-evidence/README.md`: `bind.py` requires a replayed ZTO/IMD
+payment, exact client commitment and separately supplied domain/type to agree.
+The detached copy trial is recorded in `portable-check-04.json`. Fresh public
+Ethereum trials are in `live-check-results-04.json`, `anchored-round04.json`
+and the bridge's `round04.*.json`. Those transcripts retain historical provider
+observations; the demo policy was derived from the receipt, not an invoice.
+`live_checks.py` uses the public endpoint normally; this runtime routed its reads
+through the assignment's supplied transport without persisting its address.
 
-The new mark is four ochre strands passing through a reed sieve, representing
-inspection of every part of a payment commitment. The installed image tool
-produced the pigment; `finish_wall_03.py` documents one-time composition on the
-verified ancestor. All pixels outside the small addition and deep cracks remain
-identical. Do not rerun it on the finished wall.
+`REPORT.md` replaces the previous report and lists per-line trials, working
+behavior, unresolved limits, shared changes and scope. `COINS.md` says none:
+ZTO already supplies practical payment evidence and IMD is supported second.
 
-Wall: `artifacts/gathering/wall-v3.png` (also `wall.png`), RGB PNG, 1254 × 1254.
-Record: `dist/gathering/03.json`. Preview: `dist/gathering/03.jpg`, JPEG, 512 × 512,
-75198 bytes. The full PNG and decoded JPEG were inspected. Ancestor Pepe and
-all earlier marks are preserved. No hands/stencils, words or forbidden symbols
-observed; no known unmet visual requirements. [wall-review-03.json](wall-review-03.json)
-contains the review and preservation measurements. This is local visual review.
+The whole gathering wall is **1254 × 1254 RGB PNG** at
+`artifacts/gathering/wall.png` and required `artifacts/gathering/wall-v4.png`.
+The preview is **512 × 512 JPEG**, 75,232 bytes, at `dist/gathering/04.jpg`;
+its record `04.json` uses the PNG's lowercase SHA-256 artifact URL. The installed
+image generator made one ochre-loop/charcoal-eye pigment draft. A one-time local
+composition added only that pigment to vacant stone; all outside pixels and deep
+cracks remain unchanged. `finish_wall_04.py` documents this process and refuses
+to run unless `wall.png` is the verified gathering-03 ancestor. It is a finishing
+record, not a command to regenerate the current deliverable.
+
+Both the full PNG and decoded JPEG were inspected: ancestor Pepe, rock, light,
+cracks, water and framing remain intact. No hands/handprints are depicted, so no
+digits are present. No text, forbidden marks, borders or frames observed.
+**No known unmet visual requirements.** Counts, format and inspection notes are
+in `wall-review-04.json`.
+
+`dist/index.html` is one dependency-free page with inline styles and captions;
+all 117 inherited/current records appear by wall, newest painted mark first,
+with future slots expandable. Painted JPEGs load locally offline; full-size walls
+and unpainted cave images use public artifact URLs. Four goals are copied exactly
+from their unchanged GOAL.md files to `dist/goals.json`. This is the fourth
+painted gathering, so the first-gathering placeholder creation rule does not
+apply; existing future records remain untouched.
+
+Rebuild the page and check delivery:
+
+```sh
+python3 -B gathering/build_gallery.py
+python3 -B gathering/check_delivery.py
+```
+
+The latter validates image structure, record/hash/traits, previews, placeholder
+coverage, gallery order, goals, vendored provenance, unchanged line-folder hashes
+and the 100 KB file cap outside artifacts. It requires the locally delivered wall
+files. Named PNG outputs remain untracked for the daemon to upload separately.

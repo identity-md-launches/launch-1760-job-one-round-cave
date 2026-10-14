@@ -17,6 +17,17 @@ class EvidenceError(ValueError):
     pass
 
 
+class ReadFailure(EvidenceError):
+    """Bounded public diagnostic; excludes endpoint, body and request parameters."""
+    def __init__(self, method, kind, detail, code=None):
+        self.diagnostic = {"method": method, "kind": kind,
+                           "detail": "".join(c if 32 <= ord(c) < 127 else "?"
+                                             for c in detail)[:240]}
+        if type(code) is int:
+            self.diagnostic["code"] = code
+        super().__init__(json.dumps(self.diagnostic, ensure_ascii=True))
+
+
 def hash32(value):
     if not isinstance(value, str) or not re.fullmatch(r"0x[0-9a-fA-F]{64}", value):
         raise EvidenceError("expected a 32-byte hash")
@@ -54,9 +65,8 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 class RPC:
-    """Direct networking is disabled; use the bridge's bounded public reads."""
-    def __init__(self, url):
-        raise EvidenceError("use the bridge's bounded public reads adapter")
+    def __init__(self, *args, **kwargs):
+        raise EvidenceError('Direct transport disabled; use bridge capture with bounded public reads')
 
 
 def block(rpc, tag):
@@ -178,7 +188,10 @@ def main(argv=None):
         print(json.dumps(report, indent=2))
         return 0 if report["settled"] else 1
     except (EvidenceError, urllib.error.URLError, TimeoutError, json.JSONDecodeError, OSError) as exc:
-        print(json.dumps({"settled": False, "state": "error", "reason": str(exc)}, indent=2))
+        report = {"settled": False, "state": "error", "reason": str(exc)}
+        if isinstance(exc, ReadFailure):
+            report["failedRead"] = exc.diagnostic
+        print(json.dumps(report, indent=2))
         return 2
 
 

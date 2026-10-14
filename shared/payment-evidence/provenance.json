@@ -2,9 +2,9 @@
   {
     "source": "line-1/tools/bounded-rpc-snapshot/snapshot.py",
     "copy": "vendor/rpc_snapshot.py",
-    "sha256": "4b012b592a467fe6d5e19d8003347aa3aee6aa80e6d14b4ce6eaedb13fbe2dec",
+    "sha256": "3df4d6ad7fd38e9730fe159ea6185f7c72e6a1d022aa79dd5a864e4226b7b651",
     "copiedSha256": "2f8291af470d2a74c8118c2853e9c9e90935b143d792dd22c59da7d3d9bd7df9",
-    "adaptation": "Retain bounded RPC prefix unchanged; remove filesystem verification/output functions and CLI imports. Re-derived from current round 23 source; vendor bytes unchanged."
+    "adaptation": "Keep public-read prefix; remove CLI/filesystem imports and SAFE_FILES loader. Re-derived from mark 24 source."
   },
   {
     "source": "line-2/tools/json-contract/check.py",
@@ -16,9 +16,9 @@
   {
     "source": "line-3/tools/settlement-check/settlement.py",
     "copy": "vendor/settlement-check/settlement.py",
-    "sha256": "347709c5f1dbd1b90a05535e4f8ef62be033749a676b14b43215d0517d5c6382",
-    "copiedSha256": "41c5b1deec55f6fddd0b95db72821f3c3b030b30525094be744f4137d312e1d1",
-    "adaptation": "Replace direct RPC transport with a refusing constructor; bridge capture supplies bounded public reads. Updated from repaired round 23 source."
+    "sha256": "b4082e841de3d4465707e2618c3f15bfb6772af37f46188c4bb9c2e6d7891d98",
+    "copiedSha256": "b94d80c645b733a70133177fe963d450cbadbb34a9916d339a9b18812692d110",
+    "adaptation": "Replace direct RPC transport with refusing constructor; bridge capture supplies bounded public reads. Re-derived from mark 24 source including ReadFailure."
   },
   {
     "source": "line-3/tools/payment-witness/witness.py",
@@ -39,6 +39,13 @@
     "copy": "vendor/typed_trace.py",
     "sha256": "5c31aee1c6c845e2624448938a586016dd6304f768b1f793852919ec907ca78d",
     "copiedSha256": "5c31aee1c6c845e2624448938a586016dd6304f768b1f793852919ec907ca78d",
+    "adaptation": "none; byte-for-byte source copy"
+  },
+  {
+    "source": "line-4/tools/domain-check/domain_check.py",
+    "copy": "vendor/domain_check.py",
+    "sha256": "5ef34624c0834a0ee87edb58ab1908ebc35bce4c6062c6dcab820d5b824c5a8c",
+    "copiedSha256": "5ef34624c0834a0ee87edb58ab1908ebc35bce4c6062c6dcab820d5b824c5a8c",
     "adaptation": "none; byte-for-byte source copy"
   }
 ]

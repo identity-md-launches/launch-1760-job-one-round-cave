@@ -1,10 +1,30 @@
 {
-  "name": "Not painted yet",
-  "image": "https://api.imd.fun/artifacts/ce5dbc18003365f5a1bf9014a2a357c2cb5c5dc2335dd0eb9b661ae703d36308",
+  "name": "The Bound Eye",
+  "image": "https://api.imd.fun/artifacts/d635c322bc05dccc59fe206ff48a2f136edfe3b7a2966656ad8fe94687cdbe9f",
   "attributes": [
     {
       "trait_type": "Cave",
       "value": "Water"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Gathering"
+    },
+    {
+      "trait_type": "Number",
+      "value": 4
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "Payment domain binding"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "An ochre loop keeps the watchful eye bound to the payment it was meant to examine."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Gathering"
     }
   ]
 }

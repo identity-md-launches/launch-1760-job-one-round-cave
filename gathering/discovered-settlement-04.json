@@ -1,0 +1,33 @@
+{
+  "source": "https://ethereum-rpc.publicnode.com",
+  "policy": {
+    "confirmations": 12,
+    "requireFinalized": true
+  },
+  "report": {
+    "chainId": 1,
+    "transactionHash": "0xaae7e97ccd2f78f0a5f8483aae9e569de71c7ee8bdc561a6bacef41471118e90",
+    "head": {
+      "number": 26192278,
+      "hash": "0xf3ed5591609a63ee49e2ef8e1114df9573cb0c63b1cbed65755c92158a6a2a33"
+    },
+    "policy": {
+      "minimumConfirmations": 12,
+      "requireFinalized": true
+    },
+    "settled": false,
+    "inclusion": {
+      "number": 26192258,
+      "hash": "0xd74a3c88249076582fad803ccdb46db7468e8faac200d11e716968a034095792"
+    },
+    "execution": "succeeded",
+    "finalizedHead": {
+      "number": 26192197,
+      "hash": "0xf92ad41c66398b98297e4b00d151d45c7feec93ed0c67272b616a20ce8e15af7"
+    },
+    "confirmations": 21,
+    "finalized": false,
+    "state": "awaiting_finality",
+    "reason": "Finality policy has not been proven."
+  }
+}

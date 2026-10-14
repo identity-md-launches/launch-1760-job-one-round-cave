@@ -1,0 +1,49 @@
+{
+  "ancestorSha256": "0dd7fd645cc7f07053ecf389afd7ae96c75edd0dfc1f113e3c8e80a6cf930500",
+  "ancestorSize": [
+    1254,
+    1254
+  ],
+  "wallSize": [
+    1254,
+    1254
+  ],
+  "wallFormat": "PNG",
+  "wallMode": "RGB",
+  "wallSha256": "d635c322bc05dccc59fe206ff48a2f136edfe3b7a2966656ad8fe94687cdbe9f",
+  "changedPixels": 5984,
+  "unchangedPixels": 1566532,
+  "changedPixelBounds": [
+    404,
+    179,
+    526,
+    296
+  ],
+  "allPixelsOutsideAdditionUnchanged": true,
+  "additionRectangle": [
+    395,
+    170,
+    140,
+    140
+  ],
+  "deepCracksProtected": true,
+  "previewSize": [
+    512,
+    512
+  ],
+  "previewFormat": "JPEG",
+  "previewBytes": 75232,
+  "previewQuality": 52,
+  "imageTool": "built-in image_gen.imagegen; import_generated_image",
+  "promptSummary": "One worn yellow-ochre protective loop enclosing a charcoal heavy-lidded frog eye with red ochre iris. Generated pigment added to vacant ancestor stone; no hands, text or borders.",
+  "reviewStatus": "visually inspected full PNG and decoded JPEG",
+  "unmetVisualRequirements": [],
+  "visualObservations": [
+    "Recognizable ancestor Pepe with wide mouth and big heavy-lidded eyes preserved.",
+    "New small charcoal eye inside a worn yellow-ochre loop above-left of Pepe.",
+    "Warm rough stone, cracks, light, water and framing retained.",
+    "No hands, handprints or stencils present; no digits depicted.",
+    "No text, numbers, captions, logos, signatures, watermarks, borders, frames, real people or prohibited symbols observed."
+  ],
+  "generationDrafts": 1
+}

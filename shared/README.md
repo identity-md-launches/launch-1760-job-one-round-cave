@@ -18,3 +18,8 @@ replay the checked payment, inspect its EIP-712 field words and compare an exact
 client request, locating mismatches by JSON Pointer. The trace is vendored from
 Line 4 and connects to the existing four-line bridge. Twelve integration tests
 and a fresh real ZTO payment exercise it entirely offline after capture.
+
+Gathering 04 adds payment domain binding: see `payment-evidence/bind.py` and its
+README for a single offline decision requiring payment policy, exact client
+encoding, and independently supplied domain/type to all match. No signing or
+new coin is needed.
