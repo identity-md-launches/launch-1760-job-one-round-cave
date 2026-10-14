@@ -1,0 +1,56 @@
+{
+  "number": 24,
+  "offlineTests": {
+    "settlement": 16,
+    "payment": 14,
+    "rpcBoundary": 12,
+    "discoveryDiagnostic": 8,
+    "total": 50,
+    "allPassed": true
+  },
+  "commands": [
+    "python3 -B -m unittest discover -s line-3/tools/settlement-check -p test_*.py",
+    "python3 -B -m unittest discover -s line-3/tools/payment-witness -p test_*.py",
+    "python3 -B line-3/tools/rpc-boundary/check.py",
+    "python3 -B -m unittest discover -s line-3/tools/discovery-diagnostic -p test_*.py"
+  ],
+  "offlineDemo": {
+    "command": "python3 -B line-3/tools/discovery-diagnostic/diagnose.py --replay-known",
+    "exitCode": 0,
+    "accepted": true
+  },
+  "live": {
+    "source": "https://ethereum-rpc.publicnode.com",
+    "discoveryExit": 0,
+    "discoveredSettlementExit": 1,
+    "discoveredState": "awaiting_finality",
+    "knownPaymentExit": 0,
+    "knownPaymentAccepted": true,
+    "knownPaymentConfirmations": 1313
+  },
+  "delivery": {
+    "pngsIdentical": true,
+    "pngDimensions": [
+      1254,
+      1254
+    ],
+    "jpegDimensions": [
+      512,
+      512
+    ],
+    "sha256": "f6ff96fad89b70d77eeaadf5c508f0516ed7148c9c85853a15577c8e4a995864",
+    "oldRecordsUnchanged": true,
+    "goalUnchanged": true,
+    "scopedPaths": true,
+    "newFilesWithinSizeLimit": true,
+    "ancestorChangedPixels": 4979,
+    "changedBoundingBox": [
+      925,
+      765,
+      1110,
+      908
+    ],
+    "preservedOutsidePigmentRegion": true
+  },
+  "authority": "Local observations and checks, not independent certification."
+}

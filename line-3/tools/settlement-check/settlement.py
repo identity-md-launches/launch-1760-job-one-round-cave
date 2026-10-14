@@ -17,6 +17,17 @@ class EvidenceError(ValueError):
     pass
 
 
+class ReadFailure(EvidenceError):
+    """Bounded public diagnostic; excludes endpoint, body and request parameters."""
+    def __init__(self, method, kind, detail, code=None):
+        self.diagnostic = {"method": method, "kind": kind,
+                           "detail": "".join(c if 32 <= ord(c) < 127 else "?"
+                                             for c in detail)[:240]}
+        if type(code) is int:
+            self.diagnostic["code"] = code
+        super().__init__(json.dumps(self.diagnostic, ensure_ascii=True))
+
+
 def hash32(value):
     if not isinstance(value, str) or not re.fullmatch(r"0x[0-9a-fA-F]{64}", value):
         raise EvidenceError("expected a 32-byte hash")
@@ -76,6 +87,19 @@ class RPC:
     def call(self, method, params):
         if method not in {"eth_chainId", "eth_getBlockByNumber", "eth_getTransactionReceipt", "eth_getLogs"}:
             raise EvidenceError("method is not an allowed read")
+        try:
+            return self._call(method, params)
+        except ReadFailure:
+            raise
+        except urllib.error.HTTPError as exc:
+            exc.close()
+            raise ReadFailure(method, "http", "Public endpoint refused the read", exc.code) from None
+        except (urllib.error.URLError, TimeoutError, OSError):
+            raise ReadFailure(method, "transport", "Public read connection failed") from None
+        except EvidenceError as exc:
+            raise ReadFailure(method, "invalid_response", str(exc)) from None
+
+    def _call(self, method, params):
         self.sequence += 1
         request = urllib.request.Request(
             self.url,
@@ -94,7 +118,10 @@ class RPC:
         if ("result" in result) == ("error" in result):
             raise EvidenceError("RPC response must contain exactly one of result or error")
         if "error" in result:
-            raise EvidenceError("RPC error: " + json.dumps(result["error"]))
+            error = result["error"]
+            if not isinstance(error, dict) or type(error.get("code")) is not int or not isinstance(error.get("message"), str):
+                raise EvidenceError("malformed RPC error")
+            raise ReadFailure(method, "rpc", error["message"], error["code"])
         return result["result"]
 
 
@@ -217,7 +244,10 @@ def main(argv=None):
         print(json.dumps(report, indent=2))
         return 0 if report["settled"] else 1
     except (EvidenceError, urllib.error.URLError, TimeoutError, json.JSONDecodeError, OSError) as exc:
-        print(json.dumps({"settled": False, "state": "error", "reason": str(exc)}, indent=2))
+        report = {"settled": False, "state": "error", "reason": str(exc)}
+        if isinstance(exc, ReadFailure):
+            report["failedRead"] = exc.diagnostic
+        print(json.dumps(report, indent=2))
         return 2
 
 

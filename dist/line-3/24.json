@@ -1,0 +1,30 @@
+{
+  "name": "The Read Lamp",
+  "image": "https://api.imd.fun/artifacts/f6ff96fad89b70d77eeaadf5c508f0516ed7148c9c85853a15577c8e4a995864",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Water"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 3"
+    },
+    {
+      "trait_type": "Number",
+      "value": 24
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "discovery-diagnostic"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Pepe lights the failed read before trusting the next stone."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "verify Ethereum transaction settlement"
+    }
+  ]
+}

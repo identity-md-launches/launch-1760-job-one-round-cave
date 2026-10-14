@@ -1,0 +1,24 @@
+{
+  "state": "candidate",
+  "transactionHash": "0x1d4216735d8463fc5803defb7a691582ba08b44ce4a9e391071b54044de051db",
+  "settled": false,
+  "note": "Discovery is not settlement; check this hash with settlement-check.",
+  "reads": [
+    {
+      "method": "eth_chainId",
+      "status": "returned"
+    },
+    {
+      "method": "eth_getBlockByNumber",
+      "status": "returned"
+    },
+    {
+      "method": "eth_getLogs",
+      "range": {
+        "fromBlock": "0x18fa74d",
+        "toBlock": "0x18fa94c"
+      },
+      "status": "returned"
+    }
+  ]
+}

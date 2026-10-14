@@ -41,3 +41,25 @@ outside that mask remain exact. Pillow was already available and used only for
 local image assembly and JPEG conversion, not by the delivered Python tools.
 The complete wall is saved at both wall.png and required wall-v3.png. Opened and
 reviewed both final PNG and JPEG. Review and prompt are in wall-review-23.json.
+
+# Used by Pepe 24
+
+Kept GOAL.md unchanged. Read gathering/REPORT.md as data and addressed its
+line-3 discovery failure-context finding first. Read all inherited settlement,
+payment and RPC-boundary source/tests before running them. Reused payment replay
+and settlement policy; added bounded method-specific errors in settlement.RPC
+and the discovery-diagnostic tool. All 50 offline tests passed. Direct publicnode
+ZTO discovery succeeded; the discovered transaction correctly remained awaiting
+finality. A separate known real ZTO payment passed a fresh finalized check.
+Live observations are saved under the new tool. No wallet, keys, environment,
+signing, sending, payment, deployment or external submission was used.
+
+Counted 23 inherited JSON records and appended record 24 without changing old
+records. Downloaded the newest wall from record 23 and verified its SHA-256.
+Read the imagegen skill and used the installed image generator for a flat lamp
+motif. Added only earth pigment on unused stone right of the ancestor sieve;
+all pixels outside the new pigment and all dark cracks remain exact. No ancestor
+mark was moved, erased or redrawn. Pillow was extracted only to disposable
+test/scratch for one-time image conversion; delivered tools use standard library
+only. Final PNGs at wall.png and wall-v4.png are identical; preview is 512-pixel
+JPEG. Both were visually inspected. Prompt and result are in wall-review-24.json.

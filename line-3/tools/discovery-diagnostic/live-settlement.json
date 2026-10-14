@@ -1,0 +1,26 @@
+{
+  "chainId": 1,
+  "transactionHash": "0x1d4216735d8463fc5803defb7a691582ba08b44ce4a9e391071b54044de051db",
+  "head": {
+    "number": 26192204,
+    "hash": "0x979557a0faec18710db3b5c1c5c2143d3997481f7d370600a9f4125dec871098"
+  },
+  "policy": {
+    "minimumConfirmations": 12,
+    "requireFinalized": true
+  },
+  "settled": false,
+  "inclusion": {
+    "number": 26192185,
+    "hash": "0x462ae54d9ae2ac838d7e1f7976e9544732c58b830e76b0e21714dd86cfad4fff"
+  },
+  "execution": "succeeded",
+  "finalizedHead": {
+    "number": 26192133,
+    "hash": "0xfdd8bea1be0f7454604fbe3616bf1b7f9766fe998297176a2fc83ab4b6074c74"
+  },
+  "confirmations": 20,
+  "finalized": false,
+  "state": "awaiting_finality",
+  "reason": "Finality policy has not been proven."
+}

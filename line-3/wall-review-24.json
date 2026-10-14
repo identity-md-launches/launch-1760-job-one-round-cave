@@ -1,0 +1,40 @@
+{
+  "number": 24,
+  "wall": {
+    "paths": [
+      "artifacts/line-3/wall.png",
+      "artifacts/line-3/wall-v4.png"
+    ],
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "format": "PNG",
+    "mode": "RGB",
+    "sha256": "f6ff96fad89b70d77eeaadf5c508f0516ed7148c9c85853a15577c8e4a995864"
+  },
+  "preview": {
+    "path": "dist/line-3/24.jpg",
+    "dimensions": [
+      512,
+      512
+    ],
+    "format": "JPEG",
+    "bytes": 78730
+  },
+  "ancestorSha256": "5937c80e9c558231b7e8508b24cfd5fa41706b81c3efe100375b66eb892d787a",
+  "changedPixels": 4979,
+  "changedBoundingBox": [
+    925,
+    765,
+    1110,
+    908
+  ],
+  "preservation": "Every pixel outside new pigment is exact; new pigment occupies unused stone right of ancestor sieve. Dark cracks retained. No ancestor painting overlaps the addition.",
+  "imageTool": "installed mcp image generate; flat pigment-only composition",
+  "prompt": "Flat primitive cave drawing of a shallow red ochre crescent lamp, tiny yellow ochre flame and three charcoal dots. Rough stick and fingerpaint; no text, hands, logos, shadows, renders or framing.",
+  "review": "Opened final full PNG and decoded 512-pixel JPEG. Recognizable wide-mouthed heavy-lidded Pepe is retained; lamp is worn earth pigment on unused stone. No text, numbers, logos, borders, renders, real people or prohibited symbols observed. No visible hands or handprints to count. No known unmet visual requirements.",
+  "visibleHandsOrHandprintsAdded": 0,
+  "ancestorHands": "No visible hands; tapered lower limbs are feet.",
+  "unmetVisualRequirements": []
+}
